@@ -1,0 +1,34 @@
+@import './systemDesing.css';
+
+/* //// HEADER \\\\ */
+header{
+  /* height: autod; */
+}
+header div{
+  display: grid;
+  grid-template-columns: 50% 30% 20%;
+}
+header img{
+  width: auto;
+  opacity: 1;
+}
+/* //// MAIN \\\\ */
+section{
+  width: 70%;
+}
+ul{
+  grid-template-columns:auto auto auto auto;
+}
+/* //// FOOTER \\\\ */
+footer{
+  margin-top: calc(4 * var(--Spacing10));
+}
+footer img{
+  width: 20%;
+}
+footer ul{
+  padding-top: var(--Spacing10);
+  grid-template-columns:repeat(2,auto);
+  width: 30%;
+  margin: 0 auto;
+}
