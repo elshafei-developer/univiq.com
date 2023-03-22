@@ -1,9 +1,6 @@
 @import './systemDesing.css';
 
 /* //// HEADER \\\\ */
-header{
-  /* height: autod; */
-}
 header div{
   display: grid;
   grid-template-columns: 50% 30% 20%;
