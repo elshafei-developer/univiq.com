@@ -10,7 +10,6 @@ nav{
 header{
   background: linear-gradient(96deg, rgba(230, 238, 224, 0.778417) 32.72%, rgba(230, 238, 224, 0) 99.73%);
   position: relative;
-  /* height: 400px; */
   overflow: hidden;
   padding: 50px 0;
 }
