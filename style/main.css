@@ -8,16 +8,17 @@ nav{
 }
 /* //// HEADER \\\\ */
 header{
-  background: #E6EEE0;
+  background: linear-gradient(96deg, rgba(230, 238, 224, 0.778417) 32.72%, rgba(230, 238, 224, 0) 99.73%);
   position: relative;
-  height: 400px;
+  /* height: 400px; */
   overflow: hidden;
-  padding-top: 50px;
+  padding: 50px 0;
 }
-header span{color:var(--MainColor)}
+header span{
+  color:var(--MainColor);
+  font-size: 40px;
+}
 header h1{
-  padding: 0 var(--Spacing10);
-  width: 70%;
   line-height: 56px;
 }
 header img{
@@ -68,7 +69,6 @@ ul a:hover{
 /* //// FOOTER \\\\ */
 footer{
   background: var(--BackgroundColor);
-  padding: var(--Spacing10);
 }
 footer img{
   width: 50%;
@@ -85,4 +85,11 @@ footer a{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.p10{
+  padding: var(--Spacing10);
+}
+.w-auto{
+  max-width: 1020px;
+  margin: 0 auto;
 }

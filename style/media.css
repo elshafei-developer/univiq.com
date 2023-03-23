@@ -1,20 +1,28 @@
 @import './systemDesing.css';
 
+body{
+  margin: 0 auto;
+}
 /* //// HEADER \\\\ */
-header div{
+header > div{
   display: grid;
-  grid-template-columns: 50% 30% 20%;
+  grid-template-columns: 50% 20%;
+}
+header h1{
+  width: auto;
+  /* font-size: 42px; */
 }
 header img{
   width: auto;
   opacity: 1;
 }
 /* //// MAIN \\\\ */
-section{
-  width: 70%;
-}
 ul{
   grid-template-columns:auto auto auto auto;
+}
+table{
+  width: 50%;
+  margin: 0 auto;
 }
 /* //// FOOTER \\\\ */
 footer{
@@ -26,6 +34,6 @@ footer img{
 footer ul{
   padding-top: var(--Spacing10);
   grid-template-columns:repeat(2,auto);
-  width: 30%;
+  width: 35%;
   margin: 0 auto;
 }

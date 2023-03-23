@@ -7,114 +7,122 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="مرحبا بك في موقع الجامعات العراقية وجهتك الأولى عند الانتقال الى التعليم الجامعي">
   <title>موقع الجامعات العراقية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./style/systemDesing.css"> -->
-  <link rel="stylesheet" href="./style/main.css">
+  <!-- <link rel="stylesheet" href="./style/main.css"> -->
+  <!-- <link rel="stylesheet" href="./style/media.css" media="(min-width:760px) and (max-width:2000px)"> -->
+  <link rel="stylesheet" href="./style/advancedSearch.css">
+  <link rel="stylesheet" href="./style/media.css" media="(min-width:760px) and (max-width:2000px)">
+
 </head>
 
 <body>
+  <nav>
+    <div>
+      <!-- <ul>
+        <li><a href="#">الرئيسية</a></li>
+      </ul> -->
+    </div>
+  </nav>
   <header>
-    <h1>نظام البحث المتقدم</h1>
-    <form action="">
+    <h1 class="center">نظام البحث المتقدم</h1>
+    <form action="" class="w-auto p10 center">
       <ul>
         <li>
-          <label>أختر المحافظة
-            <select>
+          <label for="">أختر المحافظة</label>
+            <select name="" id="">
               <option value="all">الكل</option>
               <option value="najaf">النجف</option>
               <option value="">بغداد</option>
               <option value="">البصرة</option>
             </select>
-          </label>
         </li>
         <li>
-          <label>أختر الجامعة
+          <label for="">أختر الجامعة</label>
             <select>
               <option value="all">الكل</option>
               <option value="najaf">جامعة الكوفة</option>
               <option value="">جامعة بغداد</option>
               <option value="">جامعة البصرة</option>
             </select>
-          </label>
         </li>
         <li>
-          <label>أختر المعدل
+          <label for="">أختر المعدل</label> 
             <select>
               <option value="all">الكل</option>
               <option value="najaf">جامعة الكوفة</option>
               <option value="">جامعة بغداد</option>
               <option value="">جامعة البصرة</option>
             </select>
-          </label>
         </li>
         <li>
-          <label>أختر الكلية
+          <label for="">أختر الكلية</label> 
             <select>
               <option value="all">الكل</option>
               <option value="najaf">جامعة الكوفة</option>
               <option value="">جامعة بغداد</option>
               <option value="">جامعة البصرة</option>
             </select>
-          </label>
         </li>
         <li>
-          <label>أختر القسم
+          <label for="">أختر القسم</label> 
             <select>
               <option value="all">الكل</option>
               <option value="najaf">جامعة الكوفة</option>
               <option value="">جامعة بغداد</option>
               <option value="">جامعة البصرة</option>
             </select>
-          </label>
         </li>
         <li>
-          <label>أختر الفرع
+          <label for="">أختر الفرع</label> 
             <select>
               <option value="all">الكل</option>
               <option value="najaf">جامعة الكوفة</option>
               <option value="">جامعة بغداد</option>
               <option value="">جامعة البصرة</option>
             </select>
-          </label>
         </li>
         <li>
-          <label>أختر الجنس
+          <label for="">أختر الجنس</label> 
             <select>
               <option value="all">الكل</option>
               <option value="najaf">جامعة الكوفة</option>
               <option value="">جامعة بغداد</option>
               <option value="">جامعة البصرة</option>
             </select>
-          </label>
         </li>
         <li>
-          <label>أختر السنة
+          <label for="">أختر السنة</label> 
             <select>
               <option value="all">2023</option>
               <option value="najaf">جامعة الكوفة</option>
               <option value="">جامعة بغداد</option>
               <option value="">جامعة البصرة</option>
             </select>
-          </label>
         </li>
       </ul>
-      <input type="submit" value="بحث">
+      <button>
+        <input type="submit" value="بحث" class="center">
+      </button>
     </form>
   </header>
   <section>
-    <div>
+    <div class="center">
       <h3>عدد النتائج <span>35</span></h3>
-      <select>
+      <select class="btn-order">
         <option value="all">ترتيب تنازلي</option>
         <option value="najaf">ترتيب تصاعدي</option>
       </select>
     </div>
   </section>
-  <table border="1" width="100%">
+  <table >
     <thead>
       <tr>
         <th>الجامعة</th>
         <th>الكلية/المعدل</th>
-        <th>الفرع</th>
+        <th>الفرع/الجنس</th>
       </tr>
     </thead>
     <tbody>
@@ -150,22 +158,27 @@
       </tr>
     </tbody>
   </table>
-  <div>
+  <div class="center numPage">
     <a href="">1</a>
     <a href="">2</a>
     <a href="">3</a>
     <a href="">4</a>
   </div>
-  <footer>
-    <img src="./images/Logo.svg" alt="">
-    <ul>
-      <li><a href="./advancedSearch.html">البحث المتقدم</a></li>
-      <li>تابعنا على</li>
-      <li>تلغرام - فيس بوك</li>
-      <li><a href="./index.html">الصفحة الرئيسية</a></li>
-      <li><a href="">عن الموقع</a></li>
-      <li><a href="">تواصل معنا</a></li>
-    </ul>
+  <footer class="p10">
+    <div class="w-auto">
+      <img src="./images/Logo.svg" alt="" class="center">
+      <ul>
+        <li><a href="./index.html">الصفحة الرئيسية</a></a></li>
+        <li><a href="./advancedSearch.html">البحث المتقدم</a></li>
+        <li><a href="">عن الموقع</a></a></li>
+        <li><a href="">تواصل معنا</a></a></li>
+        <li><a href="#">تابعنا على</a></li>
+        <li>
+          <a href="#">فيس بوك</a>
+          <a href="#">تلغرام</a>
+        </li>
+      </ul>
+    </div>
   </footer>
 </body>
 
