@@ -49,23 +49,23 @@ button input {
   cursor: pointer;
 }
 /* //// SECTION \\\\ */
-section{
-  margin: calc(2*var(--Spacing10)) var(--Spacing10);
+section {
+  margin: calc(2 * var(--Spacing10)) var(--Spacing10);
 }
-section div.center{
+section div.center {
   flex-direction: row;
   gap: 10px;
 }
-h3{
-  color: var(--BlackColor)!important;
+h3 {
+  color: var(--BlackColor) !important;
   display: inline;
   margin-bottom: 10px;
 }
-span{
+span {
   color: var(--MainColor);
   font-size: 30px;
 }
-.btn-order{
+.btn-order {
   border: 2px solid var(--MainColor);
   border-radius: 2px;
   background-color: var(--MainColor);
@@ -75,43 +75,43 @@ span{
 }
 
 /* //// TABLE \\\\ */
-table{
+table {
   width: 100%;
   text-align: center;
   border-spacing: 0;
 }
-thead{
+thead {
   color: var(--MainColor);
 }
-th{
+th {
   padding-bottom: 10px;
 }
-tbody tr td{
+tbody tr td {
   padding: 10px 0;
 }
-tbody tr:nth-child(odd){
+tbody tr:nth-child(odd) {
   background-color: var(--transparentColor);
 }
-.numPage{
+.numPage {
   flex-direction: row !important;
 }
-.numPage a{
+.numPage a {
   padding: var(--Spacing10);
   color: var(--MainColor);
   font-weight: bold;
 }
 /* //// FOOTER \\\\ */
-footer{
+footer {
   background: var(--BackgroundColor);
 }
-footer img{
+footer img {
   width: 50%;
   margin: 0 auto;
 }
-footer ul li{
+footer ul li {
   margin: 0 auto;
 }
-footer a{
+footer a {
   font-weight: bold;
   color: var(--BlackColor);
 }

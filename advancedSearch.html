@@ -10,9 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <!-- ------------------------------------ -->
   <!-- <link rel="stylesheet" href="./style/systemDesing.css"> -->
   <!-- <link rel="stylesheet" href="./style/main.css"> -->
-  <!-- <link rel="stylesheet" href="./style/media.css" media="(min-width:760px) and (max-width:2000px)"> -->
+  <!-- <link rel="stylesheet" href="./style/media.css" medi a="(min-width:760px) and (max-width:2000px)"> -->
+  <!-- ------------------------------------ -->
   <link rel="stylesheet" href="./style/advancedSearch.css">
   <link rel="stylesheet" href="./style/media.css" media="(min-width:760px) and (max-width:2000px)">
 
@@ -32,79 +34,80 @@
       <ul>
         <li>
           <label for="">أختر المحافظة</label>
-            <select name="" id="">
-              <option value="all">الكل</option>
-              <option value="najaf">النجف</option>
-              <option value="">بغداد</option>
-              <option value="">البصرة</option>
-            </select>
+          <select name="" id="">
+            <option value="all">الكل</option>
+            <option value="najaf">النجف</option>
+            <option value="">بغداد</option>
+            <option value="">البصرة</option>
+          </select>
         </li>
         <li>
           <label for="">أختر الجامعة</label>
-            <select>
-              <option value="all">الكل</option>
-              <option value="najaf">جامعة الكوفة</option>
-              <option value="">جامعة بغداد</option>
-              <option value="">جامعة البصرة</option>
-            </select>
+          <select id="university">
+            <option value="all" >الكل</option>
+            <option value="الكوفة" >جامعة الكوفة</option>
+            <option value="بغداد">جامعة بغداد</option>
+            <option value="البصرة">جامعة البصرة</option>
+          </select>
         </li>
         <li>
-          <label for="">أختر المعدل</label> 
-            <select>
-              <option value="all">الكل</option>
-              <option value="najaf">جامعة الكوفة</option>
-              <option value="">جامعة بغداد</option>
-              <option value="">جامعة البصرة</option>
-            </select>
+          <label for="">أختر المعدل</label>
+          <select>
+            <option value="all">الكل</option>
+            <option value="najaf">جامعة الكوفة</option>
+            <option value="">جامعة بغداد</option>
+            <option value="">جامعة البصرة</option>
+          </select>
         </li>
         <li>
-          <label for="">أختر الكلية</label> 
-            <select>
-              <option value="all">الكل</option>
-              <option value="najaf">جامعة الكوفة</option>
-              <option value="">جامعة بغداد</option>
-              <option value="">جامعة البصرة</option>
-            </select>
+          <label for="">أختر الكلية</label>
+          <select>
+            <option value="all">الكل</option>
+            <option value="najaf">جامعة الكوفة</option>
+            <option value="">جامعة بغداد</option>
+            <option value="">جامعة البصرة</option>
+          </select>
         </li>
         <li>
-          <label for="">أختر القسم</label> 
-            <select>
-              <option value="all">الكل</option>
-              <option value="najaf">جامعة الكوفة</option>
-              <option value="">جامعة بغداد</option>
-              <option value="">جامعة البصرة</option>
-            </select>
+          <label for="">أختر القسم</label>
+          <select>
+            <option value="all">الكل</option>
+            <option value="najaf">جامعة الكوفة</option>
+            <option value="">جامعة بغداد</option>
+            <option value="">جامعة البصرة</option>
+          </select>
         </li>
         <li>
-          <label for="">أختر الفرع</label> 
-            <select>
-              <option value="all">الكل</option>
-              <option value="najaf">جامعة الكوفة</option>
-              <option value="">جامعة بغداد</option>
-              <option value="">جامعة البصرة</option>
-            </select>
+          <label for="">أختر الفرع</label>
+          <select>
+            <option value="all">الكل</option>
+            <option value="najaf">جامعة الكوفة</option>
+            <option value="">جامعة بغداد</option>
+            <option value="">جامعة البصرة</option>
+          </select>
         </li>
         <li>
-          <label for="">أختر الجنس</label> 
-            <select>
-              <option value="all">الكل</option>
-              <option value="najaf">جامعة الكوفة</option>
-              <option value="">جامعة بغداد</option>
-              <option value="">جامعة البصرة</option>
-            </select>
+          <label for="">أختر الجنس</label>
+          <select>
+            <option value="all">الكل</option>
+            <option value="najaf">جامعة الكوفة</option>
+            <option value="">جامعة بغداد</option>
+            <option value="">جامعة البصرة</option>
+          </select>
         </li>
         <li>
-          <label for="">أختر السنة</label> 
-            <select>
-              <option value="all">2023</option>
-              <option value="najaf">جامعة الكوفة</option>
-              <option value="">جامعة بغداد</option>
-              <option value="">جامعة البصرة</option>
-            </select>
+          <label for="">أختر السنة</label>
+          <select>
+            <option value="all">2023</option>
+            <option value="najaf">جامعة الكوفة</option>
+            <option value="">جامعة بغداد</option>
+            <option value="">جامعة البصرة</option>
+          </select>
         </li>
       </ul>
-      <button>
-        <input type="submit" value="بحث" class="center">
+      <button id="btnFindUniv" type="button">
+        بحث
+        <!-- <input type="submit" value="بحث" class="center"> -->
       </button>
     </form>
   </header>
@@ -117,7 +120,7 @@
       </select>
     </div>
   </section>
-  <table >
+  <table>
     <thead>
       <tr>
         <th>الجامعة</th>
@@ -180,6 +183,7 @@
       </ul>
     </div>
   </footer>
+  <script src="./js/advancedSearch.js"></script>
 </body>
 
 </html>

@@ -1,44 +1,51 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-:root{
+:root {
   /* color */
-  --MainColor : #307530;
-  --TitleColor :#444F45;
-  --BlackColor : #333333;
-  --WhiteColor : #FFFFFF;
-  --BackgroundColor : #94B778;
-  --transparentColor : #E6EEE0;
+  --MainColor: #307530;
+  --TitleColor: #444f45;
+  --BlackColor: #333333;
+  --WhiteColor: #ffffff;
+  --BackgroundColor: #94b778;
+  --transparentColor: #e6eee0;
   /* Typeface */
-  --h1Size : 32px;
-  --h2Size : 24px;
-  --pSize : 16px;
-  --XL: 20px; 
+  --h1Size: 32px;
+  --h2Size: 24px;
+  --pSize: 16px;
+  --XL: 20px;
   --L: 18px;
   --M: 16px;
   --S: 14px;
   --XS: 12px;
-  --Spacing10: 10px
+  --Spacing10: 10px;
 }
-h1{
+h1 {
   color: var(--TitleColor);
   font-size: var(--h1Size);
 }
-h2,h3,h4,h5,h6{
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--MainColor);
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-a{
+a {
   text-decoration: none;
 }
-button{
+button {
   border: none;
 }
-img{width: 100%;}
+img {
+  width: 100%;
+}

@@ -1,26 +1,30 @@
 @import "./systemDesing.css";
 
 /* //// NAV \\\\ */
-nav{
+nav {
   background: var(--MainColor);
   color: var(--WhiteColor);
   height: 40px;
 }
 /* //// HEADER \\\\ */
-header{
-  background: linear-gradient(96deg, rgba(230, 238, 224, 0.778417) 32.72%, rgba(230, 238, 224, 0) 99.73%);
+header {
+  background: linear-gradient(
+    96deg,
+    rgba(230, 238, 224, 0.778417) 32.72%,
+    rgba(230, 238, 224, 0) 99.73%
+  );
   position: relative;
   overflow: hidden;
   padding: 50px 0;
 }
-header span{
-  color:var(--MainColor);
+header span {
+  color: var(--MainColor);
   font-size: 40px;
 }
-header h1{
+header h1 {
   line-height: 56px;
 }
-header img{
+header img {
   position: absolute;
   width: 80%;
   opacity: 0.1;
@@ -28,67 +32,67 @@ header img{
   left: 0;
 }
 /* //// MAIN \\\\ */
-main{
+main {
   position: relative;
 }
-main .center{
+main .center {
   margin-top: -20px;
 }
-main button{
+main button {
   background-color: var(--MainColor);
   padding: 10px 20px;
   border-radius: 15px;
 }
-main button:hover{
+main button:hover {
   background-color: var(--BlackColor);
 }
-main button a{
+main button a {
   color: var(--WhiteColor);
   font-size: 20px;
 }
-section{
-  margin: calc(2*var(--Spacing10)) var(--Spacing10);
+section {
+  margin: calc(2 * var(--Spacing10)) var(--Spacing10);
 }
-small span{
+small span {
   color: var(--MainColor);
   font-weight: bold;
 }
-ul{
+ul {
   display: grid;
   grid-template-columns: 50% 50%;
   margin: var(--Spacing10) 0;
   gap: 10px 0;
 }
-ul a{
+ul a {
   color: var(--BlackColor);
 }
-ul a:hover{
+ul a:hover {
   color: var(--MainColor);
 }
 /* //// FOOTER \\\\ */
-footer{
+footer {
   background: var(--BackgroundColor);
 }
-footer img{
+footer img {
   width: 50%;
   margin: 0 auto;
 }
-footer ul li{
+footer ul li {
   margin: 0 auto;
 }
-footer a{
+footer a {
   font-weight: bold;
 }
 /* //// Classes Public \\\\ */
-.center{
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.p10{
+.p10 {
   padding: var(--Spacing10);
 }
-.w-auto{
+.w-auto {
   max-width: 1020px;
   margin: 0 auto;
 }

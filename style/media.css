@@ -1,38 +1,38 @@
-@import './systemDesing.css';
+@import "./systemDesing.css";
 
-body{
+body {
   margin: 0 auto;
 }
 /* //// HEADER \\\\ */
-header > div{
+header > div {
   display: grid;
   grid-template-columns: 50% 20%;
 }
-header h1{
+header h1 {
   width: auto;
 }
-header img{
+header img {
   width: auto;
   opacity: 1;
 }
 /* //// MAIN \\\\ */
-ul{
-  grid-template-columns:auto auto auto auto;
+ul {
+  grid-template-columns: auto auto auto auto;
 }
-table{
+table {
   width: 50%;
   margin: 0 auto;
 }
 /* //// FOOTER \\\\ */
-footer{
+footer {
   margin-top: calc(4 * var(--Spacing10));
 }
-footer img{
+footer img {
   width: 20%;
 }
-footer ul{
+footer ul {
   padding-top: var(--Spacing10);
-  grid-template-columns:repeat(2,auto);
+  grid-template-columns: repeat(2, auto);
   width: 35%;
   margin: 0 auto;
 }
