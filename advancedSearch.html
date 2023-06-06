@@ -33,75 +33,79 @@
     <form action="" class="w-auto p10 center">
       <ul>
         <li>
-          <label for="">أختر المحافظة</label>
-          <select name="" id="">
+          <label for="city">أختر المحافظة</label>
+          <select name="" id="city">
             <option value="all">الكل</option>
+            <option value="baghdad">بغداد</option>
+            <option value="basra">البصرة</option>
+            <option value="mosul">الموصل</option>
+            <option value="erbil">أربيل</option>
+            <option value="sulaymaniyah">السليمانية</option>
+            <option value="dhiqar">ذي قار</option>
+            <option value="karbala">كربلاء</option>
             <option value="najaf">النجف</option>
-            <option value="">بغداد</option>
-            <option value="">البصرة</option>
+            <option value="anbar">الأنبار</option>
+            <option value="diwaniyah">الديوانية</option>
+            <option value="wasit">واسط</option>
+            <option value="maysan">ميسان</option>
+            <option value="ninawa">نينوى</option>
+            <option value="salahuddin">صلاح الدين</option>
+            <option value="kirkuk">كركوك</option>
+            <option value="diyala">ديالى</option>
+            <option value="qadisiyyah">القادسية</option>
+            <option value="samawah">السماوة</option>
           </select>
         </li>
         <li>
-          <label for="">أختر الجامعة</label>
+          <label for="university">أختر الجامعة</label>
           <select id="university">
             <option value="all" >الكل</option>
-            <option value="الكوفة" >جامعة الكوفة</option>
-            <option value="بغداد">جامعة بغداد</option>
-            <option value="البصرة">جامعة البصرة</option>
           </select>
         </li>
         <li>
-          <label for="">أختر المعدل</label>
-          <select>
+          <!-- <label for="average">أدخل المعدل</label> -->
+          <!-- <input type="number"> -->
+          <label for="average">أختر المعدل</label>
+          <select id="average">
             <option value="all">الكل</option>
-            <option value="najaf">جامعة الكوفة</option>
-            <option value="">جامعة بغداد</option>
-            <option value="">جامعة البصرة</option>
           </select>
         </li>
         <li>
-          <label for="">أختر الكلية</label>
-          <select>
+          <label for="college">أختر الكلية</label>
+          <select id="college">
+            <option value="all">الكل</option> 
+          </select>
+        </li>
+        <li>
+          <label for="department">أختر القسم</label>
+          <select id="department">
             <option value="all">الكل</option>
-            <option value="najaf">جامعة الكوفة</option>
-            <option value="">جامعة بغداد</option>
-            <option value="">جامعة البصرة</option>
           </select>
         </li>
         <li>
-          <label for="">أختر القسم</label>
-          <select>
+          <label for="branch">أختر الفرع</label>
+          <select id="branch">
             <option value="all">الكل</option>
-            <option value="najaf">جامعة الكوفة</option>
-            <option value="">جامعة بغداد</option>
-            <option value="">جامعة البصرة</option>
+            <option value="">علمي</option>
+            <option value="">أدبي</option>
           </select>
         </li>
         <li>
-          <label for="">أختر الفرع</label>
-          <select>
+          <label for="gender">أختر الجنس</label>
+          <select id="gender">
             <option value="all">الكل</option>
-            <option value="najaf">جامعة الكوفة</option>
-            <option value="">جامعة بغداد</option>
-            <option value="">جامعة البصرة</option>
+            <option value="najaf">مختلط</option>
+            <option value="">ذكر</option>
+            <option value="">أنثى</option>
           </select>
         </li>
         <li>
-          <label for="">أختر الجنس</label>
-          <select>
-            <option value="all">الكل</option>
-            <option value="najaf">جامعة الكوفة</option>
-            <option value="">جامعة بغداد</option>
-            <option value="">جامعة البصرة</option>
-          </select>
-        </li>
-        <li>
-          <label for="">أختر السنة</label>
-          <select>
-            <option value="all">2023</option>
-            <option value="najaf">جامعة الكوفة</option>
-            <option value="">جامعة بغداد</option>
-            <option value="">جامعة البصرة</option>
+          <label for="year">أختر السنة</label>
+          <select id="year">
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
           </select>
         </li>
       </ul>
@@ -129,7 +133,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <!-- <tr>
         <td>جامعة الكوفة<br>النجف</td>
         <td>كلية التربية<br>75</td>
         <td>العلمي<br>مختلط</td>
@@ -158,7 +162,7 @@
         <td>جامعة الكوفة<br>النجف</td>
         <td>كلية التربية<br>75</td>
         <td>العلمي<br>مختلط</td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
   <div class="center numPage">
