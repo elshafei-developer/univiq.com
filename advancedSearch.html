@@ -30,17 +30,24 @@
   </nav>
   <header>
     <h1 class="center">نظام البحث المتقدم</h1>
+    <!-- <form action="/action_page.php">
+      <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+      <input type="checkbox" name="vehicle" value="Car" checked> I have a car<br>
+      <input type="submit" value="Submit">
+    </form> -->
     <form action="" class="w-auto p10 center">
+      <h3>البحث عن طريق المعدل</h3>
       <ul>
         <li>
-          <label for="city">أختر المحافظة</label>
-          <select name="" id="city">
-            <option value="all">الكل</option>
+          <label for="average">أدخل المعدل</label>
+          <input type="number" id="average" >
+        </li>
+        <li>
+          <label for="cityAverage">أختر المحافظة</label>
+          <select name="" id="cityAverage">
+            <option value="all">كل المحافظات</option>
             <option value="baghdad">بغداد</option>
             <option value="basra">البصرة</option>
-            <option value="mosul">الموصل</option>
-            <option value="erbil">أربيل</option>
-            <option value="sulaymaniyah">السليمانية</option>
             <option value="dhiqar">ذي قار</option>
             <option value="karbala">كربلاء</option>
             <option value="najaf">النجف</option>
@@ -52,34 +59,8 @@
             <option value="salahuddin">صلاح الدين</option>
             <option value="kirkuk">كركوك</option>
             <option value="diyala">ديالى</option>
-            <option value="qadisiyyah">القادسية</option>
-            <option value="samawah">السماوة</option>
-          </select>
-        </li>
-        <li>
-          <label for="university">أختر الجامعة</label>
-          <select id="university">
-            <option value="all" >الكل</option>
-          </select>
-        </li>
-        <li>
-          <!-- <label for="average">أدخل المعدل</label> -->
-          <!-- <input type="number"> -->
-          <label for="average">أختر المعدل</label>
-          <select id="average">
-            <option value="all">الكل</option>
-          </select>
-        </li>
-        <li>
-          <label for="college">أختر الكلية</label>
-          <select id="college">
-            <option value="all">الكل</option> 
-          </select>
-        </li>
-        <li>
-          <label for="department">أختر القسم</label>
-          <select id="department">
-            <option value="all">الكل</option>
+            <option value="muthanna">المثنى</option>
+            <option value="babylon">بابل</option>
           </select>
         </li>
         <li>
@@ -93,8 +74,7 @@
         <li>
           <label for="gender">أختر الجنس</label>
           <select id="gender">
-            <option value="all">الكل</option>
-            <option value="najaf">مختلط</option>
+            <option value="all">مختلط</option>
             <option value="">ذكر</option>
             <option value="">أنثى</option>
           </select>
@@ -108,63 +88,145 @@
             <option value="2020">2020</option>
           </select>
         </li>
+        <li>
+          <button id="btnFindUnivAverage" type="button">
+            <input type="button" value="بحث بالمعدل" class="center">
+          </button>
+        </li>
       </ul>
-      <button id="btnFindUniv" type="button">
-        بحث
-        <!-- <input type="submit" value="بحث" class="center"> -->
-      </button>
+    </form>
+    <form action="" class="w-auto p10 center">
+      <h3>البحث بالفلترة</h3>
+      <ul>
+        <li>
+          <label for="cityFilter">أختر المحافظة</label>
+          <select name="" id="cityFilter">
+            <option value="all">كل المحافظات</option>
+            <option value="baghdad">بغداد</option>
+            <option value="basra">البصرة</option>
+            <!-- <option value="mosul">الموصل</option> -->
+            <!-- <option value="erbil">أربيل</option> -->
+            <!-- <option value="sulaymaniyah">السليمانية</option> -->
+            <option value="dhiqar">ذي قار</option>
+            <option value="karbala">كربلاء</option>
+            <option value="najaf">النجف</option>
+            <option value="anbar">الأنبار</option>
+            <option value="diwaniyah">الديوانية</option>
+            <option value="wasit">واسط</option>
+            <option value="maysan">ميسان</option>
+            <option value="ninawa">نينوى</option>
+            <option value="salahuddin">صلاح الدين</option>
+            <option value="kirkuk">كركوك</option>
+            <option value="diyala">ديالى</option>
+            <option value="muthanna">المثنى</option>
+            <option value="muthanna">بابل</option>
+          </select>
+        </li>
+        <li>
+          <label for="universityFilter">أختر الجامعة</label>
+          <select id="universityFilter">
+            <option value="all" >كل الجامعات</option>
+          </select>
+        </li>
+        <li>
+          <label for="collegeFilter">أختر الكلية</label>
+          <select id="collegeFilter">
+            <option value="all">الكل</option> 
+          </select>
+        </li>
+        <!-- <li>
+          <label for="departmentFilter">أختر القسم</label>
+          <select id="departmentFilter">
+            <option value="all">الكل</option>
+          </select>
+        </li> -->
+        <li>
+          <label for="branchFilter">أختر الفرع</label>
+          <select id="branchFilter">
+            <option value="all">الكل</option>
+            <option value="">علمي</option>
+            <option value="">أدبي</option>
+          </select>
+        </li>
+        <li>
+          <label for="genderFilter">أختر الجنس</label>
+          <select id="genderFilter">
+            <option value="all">مختلط</option>
+            <option value="">ذكر</option>
+            <option value="">أنثى</option>
+          </select>
+        </li>
+        <li>
+          <label for="yearFilter">أختر السنة</label>
+          <select id="yearFilter">
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+          </select>
+        </li>
+        <li>
+          <button id="btnFindUnivFilter" type="button">
+            <!-- بحث -->
+            <input type="button" value="بحث بالفلترة" class="center">
+          </button>
+        </li>
+      </ul>
     </form>
   </header>
   <section>
     <div class="center">
-      <h3>عدد النتائج <span>35</span></h3>
+      <h3>عدد النتائج <span id="countResult">.</span></h3>
       <select class="btn-order">
         <option value="all">ترتيب تنازلي</option>
         <option value="najaf">ترتيب تصاعدي</option>
       </select>
     </div>
   </section>
+  <div>
   <table>
     <thead>
       <tr>
         <th>الجامعة</th>
-        <th>الكلية/المعدل</th>
-        <th>الفرع/الجنس</th>
+        <th>الكلية/القسم</th>
+        <!-- <th>المعدل</th> -->
+        <th>الفرع/المعدل</th>
       </tr>
     </thead>
     <tbody>
-      <!-- <tr>
+      <tr>
         <td>جامعة الكوفة<br>النجف</td>
-        <td>كلية التربية<br>75</td>
-        <td>العلمي<br>مختلط</td>
+        <td>كلية التربية<br>علوم الحاسوب</td>
+        <!-- <td>74.14</td> -->
+        <td>العلمي مختلط<br>74.14</td>
       </tr>
       <tr>
         <td>جامعة الكوفة<br>النجف</td>
-        <td>كلية التربية<br>75</td>
-        <td>العلمي<br>مختلط</td>
+        <td>كلية التربية<br>علوم الحاسوب</td>
+        <!-- <td>74.14</td> -->
+        <td>العلمي مختلط<br>74.14</td>
       </tr>
       <tr>
         <td>جامعة الكوفة<br>النجف</td>
-        <td>كلية التربية<br>75</td>
-        <td>العلمي<br>مختلط</td>
+        <td>كلية التربية<br>علوم الحاسوب</td>
+        <!-- <td>74.14</td> -->
+        <td>العلمي مختلط<br>74.14</td>
       </tr>
       <tr>
         <td>جامعة الكوفة<br>النجف</td>
-        <td>كلية التربية<br>75</td>
-        <td>العلمي<br>مختلط</td>
+        <td>كلية التربية<br>علوم الحاسوب</td>
+        <!-- <td>74.14</td> -->
+        <td>العلمي مختلط<br>74.14</td>
       </tr>
       <tr>
         <td>جامعة الكوفة<br>النجف</td>
-        <td>كلية التربية<br>75</td>
-        <td>العلمي<br>مختلط</td>
+        <td>كلية التربية<br>علوم الحاسوب</td>
+        <!-- <td>74.14</td> -->
+        <td>العلمي مختلط<br>74.14</td>
       </tr>
-      <tr>
-        <td>جامعة الكوفة<br>النجف</td>
-        <td>كلية التربية<br>75</td>
-        <td>العلمي<br>مختلط</td>
-      </tr> -->
     </tbody>
   </table>
+</div>
   <div class="center numPage">
     <a href="">1</a>
     <a href="">2</a>

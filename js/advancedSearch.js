@@ -1,142 +1,133 @@
 "use strict";
-
-let btnFindUniv = document.querySelector("#btnFindUniv");
-let universityView = document.querySelector("#university");
-let departmentView = document.querySelector("#department");
-let collegeView = document.querySelector("#college");
-let averageView = document.querySelector("#average");
-let tbody = document.querySelector("tbody");
-let setUniversity = new Set();
-let setCollege = new Set();
-let setDepartment = new Set();
-let setAverage = new Set();
-
-// create Option when onload page
-const createOption = function (link) {
-  return new Promise((resolve, reject) => {
-    let DB = new XMLHttpRequest();
-    DB.open("GET", link);
-    DB.onload = function () {
-      if (this.readyState === 4 && this.status === 200) {
-        var UnivIQ_Obj = JSON.parse(this.responseText);
-        resolve(UnivIQ_Obj);
-      }
-    };
-    DB.send();
-  });
+// Cities Iraq
+const cities = {
+  baghdad: [
+    "جامعة بغداد",
+    "الجامعة المستنصرية",
+    "الجامعة التكنولوجية",
+    "الجامعة العراقية",
+    "جامعة النهرين",
+    "جامعة ابن سينا للعلوم الطبية والصيدلانية",
+    "جامعة تكنولوجيا المعلومات الاتصالات",
+    "جامعة الكرخ للعلوم",
+    "الجامعة التقنية الوسطى",
+  ],
+  basra: [
+    "جامعة البصرة",
+    "جامعة البصرة للنفط والغاز",
+    "الجامعة التقنية الجنوبية",
+  ],
+  najaf: [
+    "جامعة الكوفة",
+    "جامعة جابر بن حيان الطبية",
+    "جامعة الفرات الاوسط التقنية ",
+  ],
+  salahuddin: ["جامعة تكريت", "جامعة سامراء", "الجامعة التقنية الشمالية"],
+  diwaniyah: ["جامعة القادسية", "جامعة الفرات الاوسط التقنية "],
+  anbar: ["جامعة الانبار", "جامعة الفلوجة", "الجامعة التقنية الوسطى"],
+  babylon: [
+    "جامعة بابل",
+    "جامعة القاسم الخضراء",
+    "جامعة الفرات الاوسط التقنية ",
+  ],
+  diyala: ["جامعة ديالى", "الجامعة التقنية الوسطى"],
+  karbala: ["جامعة كربلاء", "جامعة الفرات الاوسط التقنية "],
+  dhiQar: ["جامعة ذي قار", "جامعة سومر", "الجامعة التقنية الجنوبية"],
+  kirkuk: ["جامعة كركوك", "الجامعة التقنية الشمالية"],
+  wasit: ["جامعة واسط", "الجامعة التقنية الوسطى"],
+  maysan: ["جامعة ميسان", "الجامعة التقنية الجنوبية"],
+  muthanna: ["جامعة المثنى", "جامعة الفرات الاوسط التقنية "],
+  ninawa: [
+    "جامعة الموصل",
+    "جامعة نينوى",
+    "جامعة تلعفر",
+    "جامعة الحمدانية",
+    "الجامعة التقنية الشمالية",
+  ],
 };
+// ******************************** \\
+// Start
+async function getData(link) {
+  try {
+    let getData = await fetch(link);
+    let getJSON = await getData.json();
+    return getJSON;
+  } catch {
+    return "Not Found Data";
+  }
+}
+let btnFindUnivAverage = document.querySelector("#btnFindUnivAverage");
+let tbody = document.querySelector("tbody");
+let countResult = document.querySelector("#countResult");
 
-createOption("./DB/DB2023.json")
-  // create Options University and College and Department
-  .then((UnivIQ_Obj) => {
-    UnivIQ_Obj.forEach((el) => {
-      let splitUniversity = el.university.split("/");
-      setUniversity.add(splitUniversity[0]);
-      setCollege.add(splitUniversity[1]);
-      setDepartment.add(splitUniversity[2]);
-      setAverage.add(el.average);
-    });
-    return UnivIQ_Obj;
-  })
-  // Add Options to HTML
-  .then((resolve) => {
-    addOption(universityView, setUniversity);
-    addOption(collegeView, setCollege);
-    addOption(departmentView, setDepartment);
-    addOption(averageView, setAverage);
-    return resolve;
-  })
+btnFindUnivAverage.addEventListener("click", ShowResultByAverage);
 
-  // Show Result
-  .then((UnivIQ_Obj) => {
-    btnFindUniv.addEventListener("click", function () {
-      let universityChecked = document.querySelector(
-        "#university option:checked"
-      );
+async function ShowResultByAverage() {
+  let year = document.querySelector("#year").value;
+  let citiesSelect = document.querySelector(
+    "#cityAverage option:checked"
+  ).value;
+  await getData(`./DB/DB${year}.json`)
+    .then((univ) => {
+      if (citiesSelect === "all") {
+        return univ;
+      } else {
+        let arrUnivCities = [];
+        cities[citiesSelect].forEach((univSelect) => {
+          univ.forEach((univCities) => {
+            let univSplit = univCities.university.split("/")[0];
+            if (univSelect == univSplit) {
+              arrUnivCities.push(univCities);
+            }
+          });
+        });
+        return arrUnivCities;
+      }
+    })
+    .then((univCities) => {
+      countResult.textContent = univCities.length;
       tbody.textContent = "";
-      UnivIQ_Obj.forEach((el) => {
-        let splitUniversity = el.university.split("/");
-        if (splitUniversity[0] == universityChecked.value) {
-          let tr = document.createElement("tr");
-          let td1 = document.createElement("td");
-          td1.textContent = splitUniversity[0];
-          let br1 = document.createElement("br");
-          td1.appendChild(br1);
-          td1.append("المحافظة");
-          tr.appendChild(td1);
-          tbody.appendChild(tr);
+      univCities.forEach((el) => {
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+        td.append(el.university.split("/")[0]);
+        let br = document.createElement("br");
+        td.appendChild(br);
+        td.append("Najaf");
+        let td2 = document.createElement("td");
+        td2.append(el.university.split("/")[1]);
+        let br2 = document.createElement("br");
+        td2.appendChild(br2);
+        td2.append(el.university.split("/")[2]);
+        let td3 = document.createElement("td");
+        td3.append(`${el.branch} ${el.gender}`);
+        let br3 = document.createElement("br");
+        td3.appendChild(br3);
+        td3.append(el.average);
 
-          // let tr = document.createElement("tr");
-          let td2 = document.createElement("td");
-          td2.textContent = splitUniversity[1];
-          let br2 = document.createElement("br");
-          td2.appendChild(br2);
-          td2.append(el.average);
-          tr.appendChild(td2);
-          tbody.appendChild(tr);
-
-          let td3 = document.createElement("td");
-          td3.textContent = el.branch;
-          let br3 = document.createElement("br");
-          td3.appendChild(br3);
-          td3.append(el.gender);
-          tr.appendChild(td3);
-          tbody.appendChild(tr);
-        }
+        tr.appendChild(td);
+        tr.appendChild(td3);
+        tr.appendChild(td2);
+        tbody.appendChild(tr);
       });
     });
-  });
+}
 
-//START FUNCTIONS ONLY
-// -------------------
-// -------------------
-
-// Function add Option
-const addOption = function (selectView, setOption) {
-  for (let i = 0; i < setOption.size; i++) {
-    let option = document.createElement("option");
-    option.textContent = [...setOption][i];
-    selectView.appendChild(option);
-  }
-};
-// Split University and College and Department
-// const split = function (
-//   UnivIQ_Obj,
-//   setUniversity,
-//   setCollege,
-//   setDepartment,
-//   setAverage
-// ) {
-//   UnivIQ_Obj.forEach((el) => {
-//     let splitUniversity = el.university.split("/");
-//     setUniversity.add(splitUniversity[0]);
-//     setCollege.add(splitUniversity[1]);
-//     setDepartment.add(splitUniversity[2]);
-//     setAverage.add(el.average);
+// -------------- TEST -----------------  \\
+// let univ = new Set();
+// async function getAPI() {
+//   let getFetch = await fetch("./DB/DB2023.json");
+//   return await getFetch.json();
+// }
+// getAPI()
+//   .then((resolve) => {
+//     resolve.forEach((el) => {
+//       let univSplit = el.university.split("/")[0];
+//       univ.add(univSplit);
+//     });
+//     return univ;
+//   })
+//   .then((resolve) => {
+//     console.log(resolve);
 //   });
-// };
-
-// -------------------
-// -------------------
-//END FUNCTIONS ONLY
-
-// const citiesIraq = [
-//   "Baghdad",
-//   "Basra",
-//   "Mosul",
-//   "Erbil",
-//   "Sulaymaniyah",
-//   "DhiQar",
-//   "Karbala",
-//   "Najaf",
-//   "Anbar",
-//   "Diwaniyah",
-//   "Wasit",
-//   "Maysan",
-//   "Ninawa",
-//   "Salahuddin",
-//   "Kirkuk",
-//   "Diyala",
-//   "Qadisiyah",
-//   "Samawah",
-// ];
+// -------------- TEST -----------------  \\
