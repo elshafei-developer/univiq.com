@@ -64,55 +64,100 @@ btnFindUnivAverage.addEventListener("click", ShowResultByAverage);
 
 async function ShowResultByAverage() {
   let year = document.querySelector("#year").value;
-  let citiesSelect = document.querySelector(
-    "#cityAverage option:checked"
-  ).value;
+  let citiesSelect = document.querySelector("#cityAverage option:checked");
   await getData(`./DB/DB${year}.json`)
     .then((univ) => {
-      if (citiesSelect === "all") {
-        return univ;
-      } else {
-        let arrUnivCities = [];
-        cities[citiesSelect].forEach((univSelect) => {
-          univ.forEach((univCities) => {
-            let univSplit = univCities.university.split("/")[0];
-            if (univSelect == univSplit) {
-              arrUnivCities.push(univCities);
-            }
-          });
+      return filterCities(univ, citiesSelect);
+    })
+    .then((branch) => {
+      return filterBranch(branch, "branch");
+    })
+    .then((gender) => {
+      return filterBranch(gender, "gender");
+    })
+    .then((average) => {
+      let averageSelect = document.querySelector(`#average`);
+      let arrAverage = [];
+      console.log(typeof averageSelect.value);
+      if (+averageSelect.value > 50 && +averageSelect.value < 106) {
+        average.forEach((el) => {
+          if (el.average <= +averageSelect.value) {
+            arrAverage.push(el);
+          }
         });
-        return arrUnivCities;
+        return arrAverage;
+      } else if (+averageSelect.value == 0) {
+        console.log(+averageSelect.value);
+        return average;
+      } else if (+averageSelect.value < 50 || +averageSelect.value > 105) {
+        alert("ادخل معدل صحيح");
+        // return average;
       }
     })
-    .then((univCities) => {
-      countResult.textContent = univCities.length;
-      tbody.textContent = "";
-      univCities.forEach((el) => {
-        let tr = document.createElement("tr");
-        let td = document.createElement("td");
-        td.append(el.university.split("/")[0]);
-        let br = document.createElement("br");
-        td.appendChild(br);
-        td.append("Najaf");
-        let td2 = document.createElement("td");
-        td2.append(el.university.split("/")[1]);
-        let br2 = document.createElement("br");
-        td2.appendChild(br2);
-        td2.append(el.university.split("/")[2]);
-        let td3 = document.createElement("td");
-        td3.append(`${el.branch} ${el.gender}`);
-        let br3 = document.createElement("br");
-        td3.appendChild(br3);
-        td3.append(el.average);
-
-        tr.appendChild(td);
-        tr.appendChild(td3);
-        tr.appendChild(td2);
-        tbody.appendChild(tr);
-      });
+    .then((final) => {
+      return appendResult(final, citiesSelect);
     });
 }
 
+// Function ONLY
+function filterCities(univ, citiesSelect) {
+  if (citiesSelect.value === "all") {
+    return univ;
+  } else {
+    let arrUnivCities = [];
+    cities[citiesSelect.value].forEach((univSelect) => {
+      univ.forEach((univCities) => {
+        let univSplit = univCities.university.split("/")[0];
+        if (univSelect == univSplit) {
+          arrUnivCities.push(univCities);
+        }
+      });
+    });
+    return arrUnivCities;
+  }
+}
+function filterBranch(branch, theSelect) {
+  let branchSelect = document.querySelector(`#${theSelect} option:checked`);
+  let arrBranch = [];
+  if (branchSelect.value == "all") {
+    return branch;
+  } else {
+    branch.forEach((el) => {
+      if (el[theSelect] == branchSelect.value || el[theSelect] == "مختلط") {
+        arrBranch.push(el);
+      }
+    });
+    return arrBranch;
+  }
+}
+function appendResult(final, citiesSelect) {
+  countResult.textContent = final.length;
+  tbody.textContent = "";
+  final.forEach((el) => {
+    let tr = document.createElement("tr");
+    let td = document.createElement("td");
+    td.append(el.university.split("/")[0]);
+    let br = document.createElement("br");
+    td.appendChild(br);
+    td.append(citiesSelect.textContent);
+    let td2 = document.createElement("td");
+    td2.append(el.university.split("/")[1]);
+    let br2 = document.createElement("br");
+    td2.appendChild(br2);
+    td2.append(el.university.split("/")[2]);
+    let td3 = document.createElement("td");
+    td3.append(`${el.branch} ${el.gender}`);
+    let br3 = document.createElement("br");
+    td3.appendChild(br3);
+    td3.append(el.average);
+
+    tr.appendChild(td);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tbody.appendChild(tr);
+  });
+}
+// filterCities();
 // -------------- TEST -----------------  \\
 // let univ = new Set();
 // async function getAPI() {

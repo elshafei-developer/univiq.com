@@ -40,7 +40,7 @@
       <ul>
         <li>
           <label for="average">أدخل المعدل</label>
-          <input type="number" id="average" >
+          <input type="number" id="average" min="50" placeholder="من 50 الى 105">
         </li>
         <li>
           <label for="cityAverage">أختر المحافظة</label>
@@ -67,16 +67,17 @@
           <label for="branch">أختر الفرع</label>
           <select id="branch">
             <option value="all">الكل</option>
-            <option value="">علمي</option>
-            <option value="">أدبي</option>
+            <option value="احيائي">احيائي</option>
+            <option value="تطبيقي">تطبيقي</option>
+            <option value="ادبي">أدبي</option>
           </select>
         </li>
         <li>
           <label for="gender">أختر الجنس</label>
           <select id="gender">
             <option value="all">مختلط</option>
-            <option value="">ذكر</option>
-            <option value="">أنثى</option>
+            <option value="ذكر">ذكر + مختلط</option>
+            <option value="انثى">أنثى + مختلط</option>
           </select>
         </li>
         <li>
