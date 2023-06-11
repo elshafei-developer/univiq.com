@@ -29,6 +29,7 @@ label {
   display: block;
 }
 select {
+  background-color: white;
   width: 120px;
   border: none;
 }
