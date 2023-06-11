@@ -33,6 +33,9 @@ select {
   width: 120px;
   border: none;
 }
+#average {
+  width: 90%;
+}
 button {
   background-color: var(--MainColor);
   padding: 5px 20px;
